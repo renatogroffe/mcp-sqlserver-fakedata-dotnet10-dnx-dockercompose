@@ -1,0 +1,31 @@
+{
+	"servers": {
+		"mcp-sqlserver": {
+            "type": "stdio",
+            "command": "dnx",
+            "args": [
+                "mcpsqlserver-preview-202508d",
+                "--yes",
+                "-e",
+                "CONNECTION_STRING"
+            ],
+            "env": {
+                "CONNECTION_STRING": "Server=localhost;Database=BaseTestesMcp;User Id=sa;Password=SqlServer2025!;TrustServerCertificate=True;"
+            }
+        },
+		"mcp-fakedata": {
+            "type": "stdio",
+            "command": "dnx",
+            "args": [
+                "FakeDataSqlSrvMcpServer",
+                "--yes",
+                "-e",
+                "CONNECTION_STRING"
+            ],
+            "env": {
+                "CONNECTION_STRING": "Server=localhost;Database=BaseTestesMcp;User Id=sa;Password=SqlServer2025!;TrustServerCertificate=True;"
+            }
+        }
+	},
+	"inputs": []
+}
